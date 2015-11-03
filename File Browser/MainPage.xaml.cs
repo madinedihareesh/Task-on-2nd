@@ -34,18 +34,16 @@ namespace File_Browser
             fp.SuggestedStartLocation = PickerLocationId.Desktop;
             fp.ViewMode = PickerViewMode.Thumbnail;
             fp.FileTypeFilter.Add("*");
+         //   fp.FileTypeFilter.Add(".jpeg");
+           // fp.FileTypeFilter.Add(".png");
             StorageFolder sf = await fp.PickSingleFolderAsync();
 
             if (sf != null)
             {
-
                 IReadOnlyList<IStorageItem> read = await sf.GetItemsAsync();
                 g.ItemsSource = read;
                 g.DisplayMemberPath = "name";
-               // g.CompleteViewChange();
-               
-                
-            }
+               }
         }
 
         
