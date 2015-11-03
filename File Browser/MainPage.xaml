@@ -10,7 +10,13 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Button Content="Button" HorizontalAlignment="Left" Margin="19,19,0,0" VerticalAlignment="Top" Click="Button_Click"/>
         <GridView x:Name="g" ItemsSource="{Binding}" HorizontalAlignment="Left" Margin="215,178,0,0" VerticalAlignment="Top" Width="1141" Height="580">
-           
+            <GridView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding}"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </GridView.ItemTemplate>
         </GridView>
 
     </Grid>
