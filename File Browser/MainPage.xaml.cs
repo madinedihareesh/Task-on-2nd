@@ -37,17 +37,12 @@ namespace File_Browser
          //   fp.FileTypeFilter.Add(".jpeg");
            // fp.FileTypeFilter.Add(".png");
             StorageFolder sf = await fp.PickSingleFolderAsync();
-
             if (sf != null)
             {
                 IReadOnlyList<IStorageItem> read = await sf.GetItemsAsync();
                 g.ItemsSource = read;
                 g.DisplayMemberPath = "name";
-               }
+            }
         }
-
-        
-
-       
     }
 }
